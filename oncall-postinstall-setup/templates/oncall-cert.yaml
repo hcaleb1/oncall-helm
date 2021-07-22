@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: oncall-cert
+  namespace: istio-system
+spec:
+  # Secret names are always required.
+  secretName: oncall-cert
+  # At least one of a DNS Name, URI, or IP address is required.
+  dnsNames:
+  - thing.karch.io
+  # Issuer references are always required.
+  issuerRef:
+    name: self-signed-issuer
+    kind: ClusterIssuer

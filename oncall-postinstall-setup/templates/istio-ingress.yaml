@@ -1,0 +1,45 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: oncall-istio-gateway
+  namespace: oncall
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    tls:
+      httpsRedirect: true
+    hosts:
+    - "*"
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: oncall-cert
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: oncall-istio-virtualservice
+  namespace: oncall
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - oncall-istio-gateway
+  http:
+  - name: "oncall-web"
+    route:
+    - destination:
+        port:
+          number: 8080
+        host: oncall-web
+  
