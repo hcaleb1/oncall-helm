@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: oncall-mysql-deployment
+  labels:
+    app: oncall-mysql
+  namespace: oncall
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oncall-mysql
+  template:
+    metadata:
+      labels:
+        app: oncall-mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.7
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: '1234'
+        ports:
+        - containerPort: 3306
+        resources:
+          limits:
+            memory: "1000Mi"
+            cpu: "5000m"
