@@ -22,6 +22,31 @@ spec:
         env:
         - name: DOCKER_DB_BOOTSTRAP
           value: '1'
+        - name: CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: config-secret
+              key: CLIENT_SECRET
+        - name: EMAIL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: config-secret
+              key: email_password
+        - name: SESSION_ENCRYPT_KEY
+          valueFrom:
+            secretKeyRef:
+              name: config-secret
+              key: session_encrypt_key
+        - name: SESSION_SIGN_KEY
+          valueFrom:
+            secretKeyRef:
+              name: config-secret
+              key: session_sign_key
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: config-secret
+              key: mysql-root-password
         ports:
         - containerPort: 8080
         resources:
