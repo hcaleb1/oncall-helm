@@ -11,18 +11,5 @@ spec:
   accessModes:
     - ReadWriteOnce
   storageClassName: manual
-  hostPath:
+  hostPath: # Change to azure disk
     path: "/mnt/data"
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mysql-pv-claim
-  namespace: oncall
-spec:
-  storageClassName: manual
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi

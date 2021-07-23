@@ -92,3 +92,11 @@ data:
       body: 'You are scheduled for an on-call shift in the future, but have no phone number recorded. Please update your information in Oncall.'
 
     header_color: '#0078d4'
+    CLIENT_ID: "5b5b76e0-99ad-4e1e-b62b-c662d0831d06"
+    CLIENT_SECRET: "F-2tBx7BpA.PJ18L0OJv.FXTE7B_gq97~T"
+    AUTHORITY: "https://login.microsoftonline.com/8ebfe367-26a7-4e40-9484-0939035411f0"
+    REDIRECT_URL: "http://localhost/authorize"
+    AUDIENCE: "5b5b76e0-99ad-4e1e-b62b-c662d0831d06"
+    LOGOUT_URL: "https://login.microsoftonline.com/8ebfe367-26a7-4e40-9484-0939035411f0/oauth2/v2.0/logout"
+
+

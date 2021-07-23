@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: oncall-web
-        image: hcaleb/oncall:firstPush
+        image: hcaleb/oncall:latest
         imagePullPolicy: IfNotPresent
         env:
         - name: DOCKER_DB_BOOTSTRAP

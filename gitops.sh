@@ -6,13 +6,13 @@ k3d cluster delete
 
 k3d cluster create --k3s-server-arg "--no-deploy=traefik" --port "80:80@loadbalancer" --port "443:443@loadbalancer"
 
-echo "copying config from root to karch linux user"
-cp ~/.kube/config /home/karch/.kube/config
-chmod 777 /home/karch/.kube/config
+echo "copying config from root to caleb linux user"
+cp ~/.kube/config /home/caleb/.kube/config
+chmod 777 /home/caleb/.kube/config
 
-echo "copying config from root to karchaf windows user"
-cp ~/.kube/config /mnt/c/Users/karch/.kube/config
-chmod 777 /home/karch/.kube/config
+echo "copying config from root to CalebHicks windows user"
+cp ~/.kube/config /mnt/c/Users/CalebHicks/.kube/config
+chmod 777 /home/CalebHicks/.kube/config
 
 helm upgrade \
   cert-manager ./cert-manager \
