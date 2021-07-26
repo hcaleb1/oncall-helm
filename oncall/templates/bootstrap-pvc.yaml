@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bootstrap-pv-claim
+  namespace: oncall
+spec:
+  resources:
+    requests:
+      storage: 10Mi
+  accessModes:
+    - ReadWriteOnce

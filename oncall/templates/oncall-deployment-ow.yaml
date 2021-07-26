@@ -56,7 +56,12 @@ spec:
         volumeMounts:
           - mountPath: /home/oncall/config/
             name: oncall-configmap-volume
+          - mountPath: /home/oncall/bootstrap/
+            name: bootstrap-persistent-storage
       volumes:
         - name: oncall-configmap-volume
           configMap:
             name: oncall-configmap
+        - name: bootstrap-persistent-storage
+          persistentVolumeClaim:
+            claimName: bootstrap-pv-claim

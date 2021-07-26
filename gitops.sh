@@ -12,7 +12,7 @@ chmod 777 /home/caleb/.kube/config
 
 echo "copying config from root to CalebHicks windows user"
 cp ~/.kube/config /mnt/c/Users/CalebHicks/.kube/config
-chmod 777 /home/CalebHicks/.kube/config
+chmod 777 /mnt/c/Users/CalebHicks/.kube/config
 
 helm upgrade \
   cert-manager ./cert-manager \
